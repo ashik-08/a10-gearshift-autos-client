@@ -1,0 +1,277 @@
+[
+  {
+    "category": "Automotive",
+    "brands": [
+      {
+        "name": "Toyota",
+        "cars": [
+          {
+            "image": "https://www.motortrend.com/uploads/sites/5/2020/01/2020-Toyota-Camry-TRD-front-three-quarter-in-motion-2.jpg",
+            "name": "Toyota Camry",
+            "brand_name": "Toyota",
+            "type": "Sedan",
+            "price": "$25,000",
+            "short_description": "The Toyota Camry is a reliable family sedan with excellent fuel efficiency.",
+            "detailed_description": "The latest Toyota Camry features a sleek design, advanced safety features, and a comfortable interior. It's perfect for daily commuting.",
+            "rating": 4.5
+          },
+          {
+            "image": "https://www.motortrend.com/uploads/2021/11/2022_Toyota_RAV4_XSE_001.jpg",
+            "name": "Toyota RAV4",
+            "brand_name": "Toyota",
+            "type": "SUV",
+            "price": "$28,000",
+            "short_description": "The Toyota RAV4 is a versatile SUV with spacious interiors.",
+            "detailed_description": "The Toyota RAV4 offers a blend of style, comfort, and utility. With its all-wheel drive, it's perfect for both city and off-road adventures.",
+            "rating": 4.3
+          },
+          {
+            "image": "https://i.pinimg.com/originals/af/09/b1/af09b13f4e38effd157316f054854c0f.jpg",
+            "name": "Toyota Supra",
+            "brand_name": "Toyota",
+            "type": "Sports Car",
+            "price": "$50,000",
+            "short_description": "The Toyota Supra is a legendary sports car known for its speed and agility.",
+            "detailed_description": "The latest Toyota Supra is a high-performance sports car with a turbocharged engine, exceptional handling, and stunning design.",
+            "rating": 4.8
+          },
+          {
+            "image": "https://i.pinimg.com/originals/ed/c7/77/edc777f7da61607246223e370af1e4f5.jpg",
+            "name": "Toyota Land Cruiser",
+            "brand_name": "Toyota",
+            "type": "SUV",
+            "price": "$85,000",
+            "short_description": "The Toyota Land Cruiser is a rugged and luxurious off-road SUV.",
+            "detailed_description": "The Toyota Land Cruiser is built for adventure, offering off-road capability and a premium interior. It's the pinnacle of off-road luxury.",
+            "rating": 4.7
+          }
+        ]
+      },
+      {
+        "name": "Ford",
+        "cars": [
+          {
+            "image": "https://repairsmith-prod-wordpress.s3.amazonaws.com/2020/10/Ford_0007_2016-Ford-Fusion.jpg",
+            "name": "Ford Fusion",
+            "brand_name": "Ford",
+            "type": "Sedan",
+            "price": "$23,000",
+            "short_description": "The Ford Fusion is a stylish and efficient sedan with advanced tech features.",
+            "detailed_description": "The latest Ford Fusion offers a comfortable ride, modern technology, and great fuel economy, making it an excellent choice for daily commuting.",
+            "rating": 4.4
+          },
+          {
+            "image": "https://www.carpixel.net/w/b78a420d9ab3b44fb09e3c39607526ba/ford-explorer-st-wallpaper-hd-88262.jpg",
+            "name": "Ford Explorer",
+            "brand_name": "Ford",
+            "type": "SUV",
+            "price": "$32,000",
+            "short_description": "The Ford Explorer is a spacious and versatile SUV with three-row seating.",
+            "detailed_description": "The Ford Explorer is designed for families, offering a roomy cabin, advanced safety features, and impressive towing capacity.",
+            "rating": 4.5
+          },
+          {
+            "image": "https://images.wallpaperscraft.com/image/single/ford_mustang_gt_ford_side_view_123194_1920x1080.jpg",
+            "name": "Ford Mustang",
+            "brand_name": "Ford",
+            "type": "Sports Car",
+            "price": "$45,000",
+            "short_description": "The Ford Mustang is an iconic American muscle car known for its power and style.",
+            "detailed_description": "The Ford Mustang is a legendary sports car with powerful engine options, exhilarating performance, and classic design.",
+            "rating": 4.9
+          },
+          {
+            "image": "https://www.carpixel.net/w/204b0a23dcc01aeff0f7540a8a9560ac/ford-f-150-raptor-supercab-wallpaper-hd-16019.jpg",
+            "name": "Ford F-150 Raptor",
+            "brand_name": "Ford",
+            "type": "Truck",
+            "price": "$55,000",
+            "short_description": "The Ford F-150 Raptor is a high-performance off-road truck built for adventure.",
+            "detailed_description": "The Ford F-150 Raptor is the ultimate off-road pickup, offering superb off-road capability and a rugged exterior design.",
+            "rating": 4.7
+          }
+        ]
+      },
+      {
+        "name": "BMW",
+        "cars": [
+          {
+            "image": "https://www.carpixel.net/w/a6b7805446e3debaa6fae05885dcb078/bmw-3-series-m-sport-wallpaper-hd-80464.jpg",
+            "name": "BMW 3 Series",
+            "brand_name": "BMW",
+            "type": "Sedan",
+            "price": "$40,000",
+            "short_description": "The BMW 3 Series is a luxury sedan with sporty performance and advanced technology.",
+            "detailed_description": "The BMW 3 Series combines dynamic handling, elegant interiors, and cutting-edge technology, making it a top choice in the luxury sedan segment.",
+            "rating": 4.6
+          },
+          {
+            "image": "https://images7.alphacoders.com/962/962172.jpg",
+            "name": "BMW X5",
+            "brand_name": "BMW",
+            "type": "SUV",
+            "price": "$60,000",
+            "short_description": "The BMW X5 is a premium SUV with a spacious and opulent cabin.",
+            "detailed_description": "The BMW X5 offers a luxurious interior, strong performance, and advanced tech features, making it a superb luxury SUV choice.",
+            "rating": 4.7
+          },
+          {
+            "image": "https://cimg2.ibsrv.net/ibimg/hgm/1920x1080-1/100/702/bmw-8-series_100702902.jpg",
+            "name": "BMW M8",
+            "brand_name": "BMW",
+            "type": "Sports Car",
+            "price": "$100,000",
+            "short_description": "The BMW M8 is a high-performance sports car with breathtaking speed and style.",
+            "detailed_description": "The BMW M8 combines a powerful engine, precise handling, and a stunning design, setting the bar for luxury sports cars.",
+            "rating": 4.9
+          },
+          {
+            "image": "https://www.hdcarwallpapers.com/download/2018_bmw_i8_coupe_4k-1920x1080.jpg",
+            "name": "BMW i8",
+            "brand_name": "BMW",
+            "type": "Sports Car",
+            "price": "$150,000",
+            "short_description": "The BMW i8 is a hybrid sports car with futuristic looks and exceptional performance.",
+            "detailed_description": "The BMW i8 is a plug-in hybrid with striking design, quick acceleration, and an eco-friendly approach to supercar performance.",
+            "rating": 4.8
+          }
+        ]
+      },
+      {
+        "name": "Mercedes-Benz",
+        "cars": [
+          {
+            "image": "mercedes_c_class.jpg",
+            "name": "Mercedes-Benz C-Class",
+            "brand_name": "Mercedes-Benz",
+            "type": "Sedan",
+            "price": "$45,000",
+            "short_description": "The Mercedes-Benz C-Class is a luxury sedan with a blend of elegance and performance.",
+            "detailed_description": "The Mercedes-Benz C-Class offers a stylish interior, refined ride, and a range of powerful engine options, making it a symbol of luxury.",
+            "rating": 4.7
+          },
+          {
+            "image": "mercedes_gle.jpg",
+            "name": "Mercedes-Benz GLE",
+            "brand_name": "Mercedes-Benz",
+            "type": "SUV",
+            "price": "$65,000",
+            "short_description": "The Mercedes-Benz GLE is a premium SUV with cutting-edge technology and a comfortable ride.",
+            "detailed_description": "The Mercedes-Benz GLE is packed with advanced tech features, a spacious cabin, and exceptional comfort, offering a top-tier luxury SUV experience.",
+            "rating": 4.8
+          },
+          {
+            "image": "mercedes_amg_gt.jpg",
+            "name": "Mercedes-AMG GT",
+            "brand_name": "Mercedes-Benz",
+            "type": "Sports Car",
+            "price": "$140,000",
+            "short_description": "The Mercedes-AMG GT is a high-performance sports car with stunning looks and thrilling power.",
+            "detailed_description": "The Mercedes-AMG GT is a statement of pure performance, featuring a handcrafted engine, breathtaking speed, and aggressive styling.",
+            "rating": 4.9
+          },
+          {
+            "image": "mercedes_sls_amg.jpg",
+            "name": "Mercedes-Benz SLS AMG",
+            "brand_name": "Mercedes-Benz",
+            "type": "Sports Car",
+            "price": "$250,000",
+            "short_description": "The Mercedes-Benz SLS AMG is a supercar with gullwing doors and extraordinary performance.",
+            "detailed_description": "The Mercedes-Benz SLS AMG is an iconic supercar known for its unique design, explosive power, and unmatched luxury.",
+            "rating": 4.9
+          }
+        ]
+      },
+      {
+        "name": "Honda",
+        "cars": [
+          {
+            "image": "honda_civic.jpg",
+            "name": "Honda Civic",
+            "brand_name": "Honda",
+            "type": "Sedan",
+            "price": "$23,000",
+            "short_description": "The Honda Civic is a compact sedan known for its reliability and fuel efficiency.",
+            "detailed_description": "The latest Honda Civic offers a sleek design, comfortable interior, and advanced safety features, making it a top choice for daily commuting.",
+            "rating": 4.4
+          },
+          {
+            "image": "honda_cr-v.jpg",
+            "name": "Honda CR-V",
+            "brand_name": "Honda",
+            "type": "SUV",
+            "price": "$28,000",
+            "short_description": "The Honda CR-V is a versatile SUV with spacious interiors and a reputation for reliability.",
+            "detailed_description": "The Honda CR-V is designed for families, offering a roomy cabin, excellent cargo space, and a comfortable ride.",
+            "rating": 4.5
+          },
+          {
+            "image": "honda_accord.jpg",
+            "name": "Honda Accord",
+            "brand_name": "Honda",
+            "type": "Sedan",
+            "price": "$27,000",
+            "short_description": "The Honda Accord is a midsize sedan with a comfortable and well-appointed interior.",
+            "detailed_description": "The Honda Accord combines a spacious and high-quality interior with a smooth ride, making it a solid choice for a family sedan.",
+            "rating": 4.3
+          },
+          {
+            "image": "honda_crv_hybrid.jpg",
+            "name": "Honda CR-V Hybrid",
+            "brand_name": "Honda",
+            "type": "Hybrid SUV",
+            "price": "$32,000",
+            "short_description": "The Honda CR-V Hybrid is an eco-friendly SUV with impressive fuel economy.",
+            "detailed_description": "The Honda CR-V Hybrid combines the versatility of the CR-V with a hybrid powertrain, offering excellent efficiency and a comfortable ride.",
+            "rating": 4.7
+          }
+        ]
+      },
+      {
+        "name": "Tesla",
+        "cars": [
+          {
+            "image": "tesla_model_3.jpg",
+            "name": "Tesla Model 3",
+            "brand_name": "Tesla",
+            "type": "Electric Sedan",
+            "price": "$40,000",
+            "short_description": "The Tesla Model 3 is an electric sedan with advanced self-driving capabilities.",
+            "detailed_description": "The Tesla Model 3 offers impressive electric range, Autopilot, and a minimalist interior design, making it a leader in electric mobility.",
+            "rating": 4.8
+          },
+          {
+            "image": "tesla_model_y.jpg",
+            "name": "Tesla Model Y",
+            "brand_name": "Tesla",
+            "type": "Electric SUV",
+            "price": "$50,000",
+            "short_description": "The Tesla Model Y is a versatile electric SUV with spacious interiors.",
+            "detailed_description": "The Tesla Model Y provides ample cargo space, seating for up to seven, and the benefits of electric propulsion, all in one package.",
+            "rating": 4.7
+          },
+          {
+            "image": "tesla_model_s.jpg",
+            "name": "Tesla Model S",
+            "brand_name": "Tesla",
+            "type": "Electric Sedan",
+            "price": "$80,000",
+            "short_description": "The Tesla Model S is a luxury electric sedan with incredible acceleration and range.",
+            "detailed_description": "The Tesla Model S sets the standard for electric luxury with its high-performance variants, spacious cabin, and cutting-edge technology.",
+            "rating": 4.9
+          },
+          {
+            "image": "tesla_model_x.jpg",
+            "name": "Tesla Model X",
+            "brand_name": "Tesla",
+            "type": "Electric SUV",
+            "price": "$90,000",
+            "short_description": "The Tesla Model X is an electric SUV with distinctive Falcon Wing doors and exceptional performance.",
+            "detailed_description": "The Tesla Model X offers a unique driving experience with its innovative doors, impressive range, and advanced tech features.",
+            "rating": 4.8
+          }
+        ]
+      }
+    ]
+  }
+]
