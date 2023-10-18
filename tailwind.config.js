@@ -8,13 +8,16 @@ module.exports = withMT({
     },
     extend: {
       backgroundImage: {
-        "head-bg": "url('https://i.ibb.co/GdzkSmk/15.jpg')",
-        "coffee-bg": "url('https://i.ibb.co/ZNGMj7y/11.png')",
+        "main-bg": "url('https://wallpapercave.com/wp/wp5777356.jpg')",
       },
       colors: {
-        input: "#1B1A1ACC",
+        metal: "#0080B2",
+        menu: "#5bc4aa",
       },
     },
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark"],
+  },
 });
