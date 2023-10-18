@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 const MainLayout = () => {
   return (
     <section>
-      <div className="bg-main-bg bg-cover bg-center bg-no-repeat bg-fixed bg-blue-gray-700 bg-opacity-80 bg-blend-color-burn">
+      <div className="bg-main-bg bg-cover bg-center bg-no-repeat bg-fixed bg-blue-gray-800 bg-opacity-90 bg-blend-multiply">
         <Outlet></Outlet>
       </div>
     </section>
