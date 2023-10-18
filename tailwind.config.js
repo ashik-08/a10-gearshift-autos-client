@@ -17,7 +17,6 @@ module.exports = withMT({
       colors: {
         metal: "#0080B2",
         menu: "#5bc4aa",
-        menu2: "#32c8b7",
       },
     },
   },

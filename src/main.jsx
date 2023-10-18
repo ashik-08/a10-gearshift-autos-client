@@ -17,6 +17,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Homepage></Homepage>,
+        loader: () => fetch('http://localhost:5001/brand'),
       }
     ]
   },
