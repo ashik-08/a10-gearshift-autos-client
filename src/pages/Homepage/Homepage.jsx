@@ -5,7 +5,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import Newsletter from "../../components/Newsletter/Newsletter";
 import ShowBrands from "../../components/ShowBrands/ShowBrands";
 
-const Homepage = () => {
+const HomePage = () => {
     return (
         <div>
             <NavBar></NavBar>
@@ -18,4 +18,4 @@ const Homepage = () => {
     );
 };
 
-export default Homepage;
+export default HomePage;
