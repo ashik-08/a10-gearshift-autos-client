@@ -8,7 +8,7 @@ const NavBar = () => {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "text-menu text-sm md:text-lg font-bold underline"
+                  ? "text-menu text-sm md:text-lg font-bold"
                   : "text-sm md:text-lg"
               }
             >
@@ -20,7 +20,7 @@ const NavBar = () => {
               to="/addCar"
               className={({ isActive }) =>
                 isActive
-                  ? "text-menu text-sm md:text-lg font-bold underline"
+                  ? "text-menu text-sm md:text-lg font-bold"
                   : "text-sm md:text-lg"
               }
             >
@@ -32,7 +32,7 @@ const NavBar = () => {
               to="/cart"
               className={({ isActive }) =>
                 isActive
-                  ? "text-menu text-sm md:text-lg font-bold underline"
+                  ? "text-menu text-sm md:text-lg font-bold"
                   : "text-sm md:text-lg"
               }
             >
