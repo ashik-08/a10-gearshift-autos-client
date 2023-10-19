@@ -141,7 +141,7 @@
         "name": "Mercedes-Benz",
         "cars": [
           {
-            "image": "mercedes_c_class.jpg",
+            "image": "https://cdn.wallpapersafari.com/99/35/WbjogA.jpg",
             "name": "Mercedes-Benz C-Class",
             "brand_name": "Mercedes-Benz",
             "type": "Sedan",
@@ -151,7 +151,7 @@
             "rating": 4.7
           },
           {
-            "image": "mercedes_gle.jpg",
+            "image": "https://images4.alphacoders.com/103/thumb-1920-1039686.jpg",
             "name": "Mercedes-Benz GLE",
             "brand_name": "Mercedes-Benz",
             "type": "SUV",
@@ -161,7 +161,7 @@
             "rating": 4.8
           },
           {
-            "image": "mercedes_amg_gt.jpg",
+            "image": "https://images.alphacoders.com/895/thumb-1920-895522.jpg",
             "name": "Mercedes-AMG GT",
             "brand_name": "Mercedes-Benz",
             "type": "Sports Car",
@@ -171,7 +171,7 @@
             "rating": 4.9
           },
           {
-            "image": "mercedes_sls_amg.jpg",
+            "image": "https://cdn.wallpapersafari.com/87/50/WXv9Kz.jpg",
             "name": "Mercedes-Benz SLS AMG",
             "brand_name": "Mercedes-Benz",
             "type": "Sports Car",
@@ -186,7 +186,7 @@
         "name": "Honda",
         "cars": [
           {
-            "image": "honda_civic.jpg",
+            "image": "https://wallpapercave.com/wp/wp4070333.jpg",
             "name": "Honda Civic",
             "brand_name": "Honda",
             "type": "Sedan",
@@ -196,7 +196,7 @@
             "rating": 4.4
           },
           {
-            "image": "honda_cr-v.jpg",
+            "image": "https://nextrift.com/wp-content/uploads/2021/10/honda-cr-v-black-edition-4.jpg",
             "name": "Honda CR-V",
             "brand_name": "Honda",
             "type": "SUV",
@@ -206,7 +206,7 @@
             "rating": 4.5
           },
           {
-            "image": "honda_accord.jpg",
+            "image": "https://www.carpixel.net/w/7d322051e300f5e42554cf12975674a6/honda-accord-touring-wallpaper-hd-72774.jpg",
             "name": "Honda Accord",
             "brand_name": "Honda",
             "type": "Sedan",
@@ -216,7 +216,7 @@
             "rating": 4.3
           },
           {
-            "image": "honda_crv_hybrid.jpg",
+            "image": "https://images3.alphacoders.com/107/thumb-1920-1071275.jpg",
             "name": "Honda CR-V Hybrid",
             "brand_name": "Honda",
             "type": "Hybrid SUV",

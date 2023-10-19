@@ -3,11 +3,11 @@ import errorImage from "../../assets/Oops! 404 Error with a broken robot.gif";
 
 const ErrorPage = () => {
   return (
-    <div className="w-full h-screen flex flex-col items-center justify-center">
+    <div className="w-full flex flex-col items-center justify-center md:mt-5 2xl:mt-16 p-5">
       <figure className="outline-dashed outline-1 outline-blue-gray-50 drop-shadow-sm">
         <img src={errorImage} alt="errorPage-image" />
       </figure>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center text-center">
         <p className="text-3xl md:text-4xl lg:text-5xl text-gray-800 font-annie mt-12">
           Page Not Found
         </p>

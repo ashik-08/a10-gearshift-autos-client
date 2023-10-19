@@ -40,15 +40,26 @@ const AddCar = () => {
         Swal.fire({
           icon: "success",
           title: "Success!",
-          text: "New Car Added Successfully!",
+          text: `${name} Added Successfully!`,
           confirmButtonText: "Cool",
         });
         form.reset();
       }
     } catch (error) {
-      console.error(error);
+      console.error(error.message);
       if (error.message.includes(`No such brand ${brandName}`)) {
         toast.error("Invalid Brand Name!!! Should be like BMW or Ford!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      } else if (error.message.includes("Already exists in DB")) {
+        toast.error(`${name} Already Exists in Database`, {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -68,8 +79,12 @@ const AddCar = () => {
         className="flex items-center gap-3 w-fit hover:bg-menu rounded-lg px-2 py-1.5"
         to="/"
       >
-        <img src="https://i.ibb.co/PtjY0q3/back-50.png" alt="left" />
-        <span className="text-white text-2xl font-charmon">Back to home</span>
+        <img
+          className="w-8"
+          src="https://i.ibb.co/PtjY0q3/back-50.png"
+          alt="left"
+        />
+        <span className="text-white text-xl font-charmon">Back to home</span>
       </Link>
       <div className="glass-newsletter px-5 md:px-14 lg:px-28 py-20 mt-12 rounded-md">
         <h1 className="text-center text-blue-gray-200 font-rancho text-3xl mb-8">
@@ -156,7 +171,7 @@ const AddCar = () => {
                 type="text"
                 name="description"
                 id=""
-                placeholder="Enter short description"
+                placeholder="Enter detailed description"
                 required
               />
             </span>
