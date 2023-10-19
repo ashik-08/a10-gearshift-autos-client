@@ -6,7 +6,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const ShowCars = () => {
   const allCars = useLoaderData();
-  //   console.log(allCars);
+  // console.log(allCars);
 
   let count = 0;
 
@@ -90,7 +90,7 @@ const ShowCars = () => {
                   <div className="flex gap-5 pt-4">
                     {/* <figure className="bg-[#D2B48C] md:w-10 rounded"> */}
                     <figure className="glass-products md:w-14 md:h-14">
-                      <Link to="/">
+                      <Link to={`/brand/${car.brandName}/${car._id}`}>
                         <img className="p-4" src={view} alt="" />
                       </Link>
                     </figure>

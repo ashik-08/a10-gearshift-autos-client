@@ -2,7 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const ShowBrands = () => {
   const brands = useLoaderData();
-  //   console.log(brands);
+  // console.log(brands);
 
   return (
     <div className="container mx-auto mt-32">
