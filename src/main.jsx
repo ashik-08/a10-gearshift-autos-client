@@ -25,7 +25,7 @@ const router = createBrowserRouter([
         element: <AddCarPage></AddCarPage>,
       },
       {
-        path: "/:brandName",
+        path: "/brand/:brandName",
         element: <OneBrandAllCarShowPage></OneBrandAllCarShowPage>,
         loader: ({ params }) => fetch(`http://localhost:5001/brand/${params.brandName}`),
       },

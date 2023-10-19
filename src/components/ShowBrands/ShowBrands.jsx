@@ -2,7 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const ShowBrands = () => {
   const brands = useLoaderData();
-//   console.log(brands);
+  //   console.log(brands);
 
   return (
     <div className="container mx-auto mt-32">
@@ -12,7 +12,11 @@ const ShowBrands = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
         {brands &&
           brands.map((brand) => (
-            <Link to={`/${brand.brandName}`} key={brand._id} className="glass-products p-5 space-y-8">
+            <Link
+              to={`/brand/${brand.brandName}`}
+              key={brand._id}
+              className="glass-products p-5 space-y-8"
+            >
               <figure className="flex justify-center items-center">
                 <img
                   className="h-40 drop-shadow-lg"
