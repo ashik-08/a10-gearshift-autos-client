@@ -1,4 +1,5 @@
 import { Typography } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const LINKS = [
@@ -28,12 +29,14 @@ const Footer = () => {
               src="https://i.ibb.co/gStZhX6/gear-Up-logo.png"
               alt="logo-img"
             />
-            <Typography
-              variant="h5"
-              className="text-metal text-2xl md:text-3xl font-annie font-semibold lg:pt-1.5"
-            >
-              GearShift Autos
-            </Typography>
+            <Link to="/">
+              <Typography
+                variant="h5"
+                className="text-metal text-2xl md:text-3xl font-annie font-semibold lg:pt-1.5"
+              >
+                GearShift Autos
+              </Typography>
+            </Link>
           </div>
           <div className="grid grid-cols-3 justify-between gap-4">
             {LINKS.map(({ title, items }) => (
@@ -66,7 +69,7 @@ const Footer = () => {
             variant="small"
             className="mb-4 text-center font-indie font-medium text-blue-gray-900 md:mb-0"
           >
-            &copy; {currentYear} <a href="#">GearShift Autos</a>. All Rights
+            &copy; {currentYear} <a href="/">GearShift Autos</a>. All Rights
             Reserved.
           </Typography>
           <div className="flex gap-4 text-blue-gray-900 sm:justify-center">

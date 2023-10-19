@@ -12,7 +12,6 @@ module.exports = withMT({
       backgroundImage: {
         "main-bg": "url('https://i.ibb.co/vks6bTt/bg-img.webp')",
         "hero-bg": "url('https://i.ibb.co/dGZwrpG/banner-img.jpg')",
-        "follow-bg": "url('https://i.ibb.co/RY2Zn6f/follow-img-bg.png')",
       },
       colors: {
         metal: "#0080B2",

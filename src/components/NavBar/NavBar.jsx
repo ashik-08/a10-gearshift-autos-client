@@ -1,47 +1,47 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
-    const links = (
-        <>
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-menu text-sm md:text-lg font-bold"
-                  : "text-sm md:text-lg"
-              }
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/addCar"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-menu text-sm md:text-lg font-bold"
-                  : "text-sm md:text-lg"
-              }
-            >
-              Add Car
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/cart"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-menu text-sm md:text-lg font-bold"
-                  : "text-sm md:text-lg"
-              }
-            >
-              My Cart
-            </NavLink>
-          </li>
-        </>
-      );
-    
+  const links = (
+    <>
+      <li>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "text-menu text-sm md:text-lg font-bold"
+              : "text-sm md:text-lg"
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/addCar"
+          className={({ isActive }) =>
+            isActive
+              ? "text-menu text-sm md:text-lg font-bold"
+              : "text-sm md:text-lg"
+          }
+        >
+          Add Car
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/cart"
+          className={({ isActive }) =>
+            isActive
+              ? "text-menu text-sm md:text-lg font-bold"
+              : "text-sm md:text-lg"
+          }
+        >
+          My Cart
+        </NavLink>
+      </li>
+    </>
+  );
+
   return (
     <section className="bg-blue-gray-100">
       <div className="navbar container mx-auto">
@@ -72,23 +72,31 @@ const NavBar = () => {
           </div>
           {/* logo & name */}
           <div className="flex justify-center items-center gap-2 md:gap-4">
-            <img className="w-10 md:w-14 lg:w-16" src='https://i.ibb.co/gStZhX6/gear-Up-logo.png' alt="logo-img" />
-            <p className="text-metal md:text-2xl xl:text-3xl font-indie font-semibold">
+            <img
+              className="w-10 md:w-14 lg:w-16"
+              src="https://i.ibb.co/gStZhX6/gear-Up-logo.png"
+              alt="logo-img"
+            />
+            <Link
+              to="/"
+              className="text-metal md:text-2xl xl:text-3xl font-indie font-semibold"
+            >
               GearShift Autos
-            </p>
+            </Link>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            {links}
-          </ul>
+          <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
           {/* dropdown icon */}
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 md:w-14 lg:w-16 rounded-full">
-                <img src="https://img.icons8.com/ios-filled/50/user-male-circle.png" alt="user-male-circle" />
+                <img
+                  src="https://img.icons8.com/ios-filled/50/user-male-circle.png"
+                  alt="user-male-circle"
+                />
               </div>
             </label>
             <ul
@@ -96,9 +104,7 @@ const NavBar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 drop-shadow-lg bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>
-                  Name
-                </a>
+                <a>Name</a>
               </li>
               <li>
                 <a>Email</a>

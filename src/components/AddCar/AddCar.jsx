@@ -87,7 +87,7 @@ const AddCar = () => {
         <span className="text-white text-xl font-charmon">Back to home</span>
       </Link>
       <div className="glass-newsletter px-5 md:px-14 lg:px-28 py-20 mt-12 rounded-md">
-        <h1 className="text-center text-blue-gray-200 font-rancho text-3xl mb-8">
+        <h1 className="text-center text-blue-gray-200 font-annie text-3xl mb-8">
           Add New Car
         </h1>
         <p className="text-center text-blue-gray-200 text-lg mb-8 px-4 md:px-14">
