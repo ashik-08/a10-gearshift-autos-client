@@ -6,8 +6,7 @@ import { useState } from "react";
 
 const MyCartPage = () => {
   const loadedCartItems = useLoaderData();
-  console.log(cartItems);
-  
+
   const [cartItems, setCartItems] = useState(loadedCartItems);
 
   return (

@@ -94,9 +94,9 @@ const ShowCars = () => {
                       </Link>
                     </figure>
                     <figure className="glass-products md:w-14 md:h-14">
-                      {/* <Link to={`/updateCoffee/${car._id}`}> */}
-                      <img className="p-4" src={update} alt="" />
-                      {/* </Link> */}
+                      <Link to={`/updateCar/${car.brandName}/${car._id}`}>
+                        <img className="p-4" src={update} alt="" />
+                      </Link>
                     </figure>
                     <figure className="glass-products md:w-14 md:h-14">
                       <img
