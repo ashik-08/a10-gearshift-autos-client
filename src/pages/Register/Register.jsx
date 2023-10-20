@@ -6,7 +6,7 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -18,8 +18,13 @@ import Footer from "../../components/Footer/Footer";
 
 const Register = () => {
   const [showPass, setShowPass] = useState(false);
-  const { createUser } = useContext(AuthContext);
+  const { user, createUser } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  // Check if the user is already authenticated
+  if (user) {
+    return <Navigate to="/"></Navigate>;
+  }
 
   const handleRegister = (e) => {
     const passRegex =
@@ -27,10 +32,11 @@ const Register = () => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
+    const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    const terms = form.terms.checked;
-    // console.log(name, email, password, terms);
+    // const terms = form.terms.checked;
+    // console.log(name, photo, email, password, terms);
 
     // check password
     if (!passRegex.test(password)) {
@@ -49,28 +55,15 @@ const Register = () => {
       );
       return;
     }
-    // check terms & condition
-    else if (!terms) {
-      toast.warn("Please accept our terms and conditions!", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-      return;
-    }
 
     // create user in firebase
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
-        // update profile name
+        // update profile name & photo
         updateProfile(result.user, {
           displayName: name,
+          photoURL: photo,
         });
         Swal.fire({
           icon: "success",
@@ -86,7 +79,18 @@ const Register = () => {
         console.error(error);
         // check for duplicate email usage
         if (error.message === "Firebase: Error (auth/email-already-in-use).") {
-          toast.error("Email already is in use!", {
+          toast.error("Email already is in use", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+        } else if (error.message === "Firebase: Error (auth/invalid-email).") {
+          toast.error("Invalid Email", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -129,6 +133,17 @@ const Register = () => {
                   />
                 </span>
                 <span className="space-y-3">
+                  <p className="text-menu text-xl font-medium">Photo</p>
+                  <Input
+                    className="text-gray-100"
+                    type="url"
+                    name="photo"
+                    size="lg"
+                    label="Enter Photo URL"
+                    required
+                  />
+                </span>
+                <span className="space-y-3">
                   <p className="text-menu text-xl font-medium">Email</p>
                   <Input
                     className="text-gray-100"
@@ -159,6 +174,7 @@ const Register = () => {
               </div>
               <Checkbox
                 name="terms"
+                required
                 label={
                   <Typography
                     variant="small"

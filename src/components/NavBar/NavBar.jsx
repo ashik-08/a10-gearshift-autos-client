@@ -121,31 +121,42 @@ const NavBar = () => {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 md:w-14 lg:w-16 rounded-full">
-                {user && user.photoURL ? (
-                  <img src={user.photoURL} alt="user-pro-pic" />
+                {user && user?.photoURL ? (
+                  <img
+                    className="text-[10px]"
+                    src={user?.photoURL}
+                    alt="img-error"
+                  />
                 ) : (
                   <img
+                    className="text-[10px]"
                     src="https://img.icons8.com/ios-filled/50/user-male-circle.png"
-                    alt="user-male-circle"
+                    alt="default"
                   />
                 )}
               </div>
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 drop-shadow-lg bg-base-100 rounded-box min-w-[200px] w-fit"
+              className="menu dropdown-content mt-3 z-[1] p-2 drop-shadow-lg bg-base-100 rounded-box min-w-[200px] w-fit"
             >
-              <li>
-                {user ? (
-                  <>
-                    <li>{user.displayName}</li>
-                    <li>{user.email}</li>
+              {user ? (
+                <>
+                  <li>
+                    <a>{user?.displayName}</a>
+                  </li>
+                  <li>
+                    <a>{user?.email}</a>
+                  </li>
+                  <li>
                     <Link onClick={handleLogOut}>Logout</Link>
-                  </>
-                ) : (
+                  </li>
+                </>
+              ) : (
+                <li>
                   <Link to="/login">Login</Link>
-                )}
-              </li>
+                </li>
+              )}
             </ul>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import Swal from "sweetalert2";
@@ -12,8 +12,13 @@ import Footer from "../../components/Footer/Footer";
 
 const Login = () => {
   const [showPass, setShowPass] = useState(false);
-  const { signInUser, signInWithGoogle } = useContext(AuthContext);
+  const { user, signInUser, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  // Check if the user is already authenticated
+  if (user) {
+    return <Navigate to="/"></Navigate>;
+  }
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -41,7 +46,7 @@ const Login = () => {
         if (
           error.message === "Firebase: Error (auth/invalid-login-credentials)."
         ) {
-          toast.error("Invalid Email or Password!", {
+          toast.error("Invalid Email or Password", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
