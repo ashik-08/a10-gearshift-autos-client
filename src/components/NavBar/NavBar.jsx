@@ -1,6 +1,34 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        console.log("user logged out");
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Successfully Logged Out",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+          footer: '<a href="">Why do I have this issue?</a>',
+        });
+      });
+  };
+
   const links = (
     <>
       <li>
@@ -93,26 +121,30 @@ const NavBar = () => {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 md:w-14 lg:w-16 rounded-full">
-                <img
-                  src="https://img.icons8.com/ios-filled/50/user-male-circle.png"
-                  alt="user-male-circle"
-                />
+                {user && user.photoURL ? (
+                  <img src={user.photoURL} alt="user-pro-pic" />
+                ) : (
+                  <img
+                    src="https://img.icons8.com/ios-filled/50/user-male-circle.png"
+                    alt="user-male-circle"
+                  />
+                )}
               </div>
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 drop-shadow-lg bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 drop-shadow-lg bg-base-100 rounded-box min-w-[200px] w-fit"
             >
               <li>
-                <a>Name</a>
-              </li>
-              <li>
-                <a>Email</a>
-              </li>
-              <li>
-                <Link to="/login">
-                  Login
-                </Link>
+                {user ? (
+                  <>
+                    <li>{user.displayName}</li>
+                    <li>{user.email}</li>
+                    <Link onClick={handleLogOut}>Logout</Link>
+                  </>
+                ) : (
+                  <Link to="/login">Login</Link>
+                )}
               </li>
             </ul>
           </div>

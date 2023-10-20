@@ -6,7 +6,7 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -17,6 +17,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Register = () => {
   const [showPass, setShowPass] = useState(false);
   const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     const passRegex =
@@ -24,25 +25,13 @@ const Register = () => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
-    // const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
     const terms = form.terms.checked;
-    // console.log(name, photo, email, password, terms);
+    // console.log(name, email, password, terms);
 
     // check password
     if (!passRegex.test(password)) {
-      //   Swal.fire({
-      //     title:
-      //       "Password must contain one uppercase letter, one special character, and should not be less than 6 characters.",
-      //     icon: "warning",
-      //     showClass: {
-      //       popup: "animate__animated animate__fadeInDown",
-      //     },
-      //     hideClass: {
-      //       popup: "animate__animated animate__fadeOutUp",
-      //     },
-      //   });
       toast.warn(
         "Password must contain one uppercase letter, one special character, and should not be less than 6 characters.",
         {
@@ -60,16 +49,6 @@ const Register = () => {
     }
     // check terms & condition
     else if (!terms) {
-      //   Swal.fire({
-      //     title: "Please accept our terms and conditions!",
-      //     icon: "warning",
-      //     showClass: {
-      //       popup: "animate__animated animate__fadeInDown",
-      //     },
-      //     hideClass: {
-      //       popup: "animate__animated animate__fadeOutUp",
-      //     },
-      //   });
       toast.warn("Please accept our terms and conditions!", {
         position: "top-right",
         autoClose: 5000,
@@ -87,34 +66,24 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+        // update profile name
+        updateProfile(result.user, {
+          displayName: name,
+        });
         Swal.fire({
           icon: "success",
           title: "Success!",
-          text: "User Registered Successfully",
+          text: "User Registered Successfully.",
           confirmButtonText: "Cool",
-        });
-        // update profile name & photo
-        updateProfile(result.user, {
-          displayName: name,
-          // photoURL: photo,
         });
         // reset the input field
         form.reset();
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);
         // check for duplicate email usage
         if (error.message === "Firebase: Error (auth/email-already-in-use).") {
-          //   Swal.fire({
-          //     title: "Email already is in use!",
-          //     icon: "error",
-          //     showClass: {
-          //       popup: "animate__animated animate__fadeInDown",
-          //     },
-          //     hideClass: {
-          //       popup: "animate__animated animate__fadeOutUp",
-          //     },
-          //   });
           toast.error("Email already is in use!", {
             position: "top-right",
             autoClose: 5000,
@@ -155,13 +124,6 @@ const Register = () => {
                   required
                 />
               </span>
-              {/* <Input
-                type="text"
-                name="photo"
-                size="lg"
-                label="Photo URL"
-                required
-              /> */}
               <span className="space-y-3">
                 <p className="text-menu text-xl font-medium">Email</p>
                 <Input

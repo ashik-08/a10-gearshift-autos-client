@@ -26,7 +26,7 @@ const Login = () => {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: `Successfully Logged In. Welcome ${result.displayName}`,
+          title: `Successfully Logged In. Welcome ${result?.user?.displayName}`,
           showConfirmButton: false,
           timer: 1500,
         });
@@ -39,16 +39,6 @@ const Login = () => {
         if (
           error.message === "Firebase: Error (auth/invalid-login-credentials)."
         ) {
-          //   Swal.fire({
-          //     title: "Invalid Email or Password!",
-          //     icon: "error",
-          //     showClass: {
-          //       popup: "animate__animated animate__fadeInDown",
-          //     },
-          //     hideClass: {
-          //       popup: "animate__animated animate__fadeOutUp",
-          //     },
-          //   });
           toast.error("Invalid Email or Password!", {
             position: "top-right",
             autoClose: 5000,
@@ -70,7 +60,7 @@ const Login = () => {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: `Successfully Logged In. Welcome ${result.displayName}`,
+          title: `Successfully Logged In. Welcome ${result?.user?.displayName}`,
           showConfirmButton: false,
           timer: 1500,
         });
@@ -78,25 +68,11 @@ const Login = () => {
       })
       .catch((error) => {
         console.error(error);
-        // Swal.fire({
-        //   title: "Something is wrong!\nTry again!",
-        //   icon: "error",
-        //   showClass: {
-        //     popup: "animate__animated animate__fadeInDown",
-        //   },
-        //   hideClass: {
-        //     popup: "animate__animated animate__fadeOutUp",
-        //   },
-        // });
-        toast.error("Something is wrong! Try again!", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+          footer: '<a href="">Why do I have this issue?</a>',
         });
       });
   };
