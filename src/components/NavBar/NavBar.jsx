@@ -110,7 +110,9 @@ const NavBar = () => {
                 <a>Email</a>
               </li>
               <li>
-                <a>Login</a>
+                <Link to="/login">
+                  Login
+                </Link>
               </li>
             </ul>
           </div>

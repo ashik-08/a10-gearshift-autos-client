@@ -3,7 +3,6 @@ import update from "../../assets/icons/update.svg";
 import remove from "../../assets/icons/delete.svg";
 import { Rating } from "@material-tailwind/react";
 import { Link, useLoaderData } from "react-router-dom";
-import PropTypes from "prop-types";
 import Swal from "sweetalert2";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

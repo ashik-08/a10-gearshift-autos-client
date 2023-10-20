@@ -11,6 +11,9 @@ import OneBrandAllCarShowPage from "./pages/OneBrandAllCarShowPage/OneBrandAllCa
 import CarDetailsInfoPage from "./pages/CarDetailsInfoPage/CarDetailsInfoPage";
 import MyCartPage from "./pages/MyCartPage/MyCartPage";
 import UpdateCarPage from "./pages/UpdateCarPage/UpdateCarPage";
+import AuthProvider from "./Providers/AuthProvider";
+import Register from "./pages/Register/Register";
+import Login from "./pages/Login/Login";
 
 const router = createBrowserRouter([
   {
@@ -30,22 +33,33 @@ const router = createBrowserRouter([
       {
         path: "/brand/:brandName",
         element: <OneBrandAllCarShowPage></OneBrandAllCarShowPage>,
-        loader: ({ params }) => fetch(`http://localhost:5001/brand/${params.brandName}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5001/brand/${params.brandName}`),
       },
       {
         path: "/brand/:brandName/:id",
         element: <CarDetailsInfoPage></CarDetailsInfoPage>,
-        loader: ({ params }) => fetch(`http://localhost:5001/brand/${params.brandName}/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5001/brand/${params.brandName}/${params.id}`),
       },
       {
         path: "/updateCar/:brandName/:id",
         element: <UpdateCarPage></UpdateCarPage>,
-        loader: ({ params }) => fetch(`http://localhost:5001/brand/${params.brandName}/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5001/brand/${params.brandName}/${params.id}`),
       },
       {
-        path: '/cart',
+        path: "/cart",
         element: <MyCartPage></MyCartPage>,
         loader: () => fetch("http://localhost:5001/cart"),
+      },
+      {
+        path: '/register',
+        element: <Register></Register>,
+      },
+      {
+        path: 'login',
+        element: <Login></Login>,
       }
     ],
   },
@@ -53,6 +67,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );
