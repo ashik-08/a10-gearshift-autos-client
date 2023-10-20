@@ -3,12 +3,61 @@ import update from "../../assets/icons/update.svg";
 import remove from "../../assets/icons/delete.svg";
 import { Rating } from "@material-tailwind/react";
 import { Link, useLoaderData } from "react-router-dom";
+import PropTypes from "prop-types";
+import Swal from "sweetalert2";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
 
 const ShowCars = () => {
-  const allCars = useLoaderData();
-  // console.log(allCars);
+  const loadedAllCars = useLoaderData();
+
+  const [allCars, setAllCars] = useState(loadedAllCars);
 
   let count = 0;
+
+  const handleDeleteCar = (_id, brandName) => {
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        // delete car details from the carBrand collection
+        try {
+          const response = await fetch(`http://localhost:5001/brand/${brandName}/${_id}`, {
+            method: "DELETE",
+          });
+          const result = await response.json();
+          console.log(result);
+          if (result.deletedCount > 0) {
+            Swal.fire("Deleted!", "Car has been Deleted.", "success");
+            const showRemainingCars = allCars.filter(
+              (remainCars) => remainCars._id !== _id
+            );
+            setAllCars(showRemainingCars);
+          }
+        } catch (error) {
+          console.error(error);
+          toast.error("Couldn't Delete!! Try Again!!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+        }
+      }
+    });
+  };
 
   return (
     <section>
@@ -100,7 +149,7 @@ const ShowCars = () => {
                     </figure>
                     <figure className="glass-products md:w-14 md:h-14">
                       <img
-                        // onClick={() => handleDelete(car._id)}
+                        onClick={() => handleDeleteCar(car._id, car.brandName)}
                         className="p-4"
                         src={remove}
                         alt=""
@@ -113,6 +162,7 @@ const ShowCars = () => {
           </div>
         ))
       )}
+      <ToastContainer/>
     </section>
   );
 };

@@ -29,7 +29,7 @@ const CartItems = ({ item, cartItems, setCartItems }) => {
           const result = await response.json();
           console.log(result);
           if (result.deletedCount > 0) {
-            Swal.fire("Deleted!", "Item has been deleted.", "success");
+            Swal.fire("Deleted!", "Item has been Deleted.", "success");
             const showRemainingCartItems = cartItems.filter(
               (remainItems) => remainItems._id !== _id
             );
@@ -37,7 +37,7 @@ const CartItems = ({ item, cartItems, setCartItems }) => {
           }
         } catch (error) {
           console.error(error);
-          toast.error("Couldn't delete!! Try Again!!", {
+          toast.error("Couldn't Delete!! Try Again!!", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -60,7 +60,7 @@ const CartItems = ({ item, cartItems, setCartItems }) => {
           alt={`${name}-image`}
         />
       </figure>
-      <div className="glass-cart flex flex-col justify-center items-start pl-3 xl:pl-6 space-y-1 lg:space-y-2 xl:space-y-3 rounded-r-lg w-1/2 h-[160px] lg:h-[200px] xl:h-[240px]">
+      <div className="glass-cart flex flex-col justify-center items-start px-3 py-2 xl:px-5 space-y-1 lg:space-y-2 xl:space-y-3 rounded-r-lg w-1/2 h-[160px] lg:h-[200px] xl:h-[240px]">
         <p className="text-blue-gray-200 lg:text-lg xl:text-2xl font-semibold">
           {name}
         </p>
