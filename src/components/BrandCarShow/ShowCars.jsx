@@ -29,7 +29,7 @@ const ShowCars = () => {
           <div key={car._id}>
             {count === 0 ? (
               <>
-                <h1 className="text-white text-center text-3xl md:text-4xl font-indie font-medium mt-20 md:mt-32 -mb-12">
+                <h1 className="text-white text-center text-3xl md:text-4xl font-indie font-medium mt-20 md:mt-32 -mb-10">
                   Available Automobile
                 </h1>
                 <p className="hidden">{count++}</p>
@@ -88,19 +88,16 @@ const ShowCars = () => {
                   />
                   {/* icons */}
                   <div className="flex gap-5 pt-4">
-                    {/* <figure className="bg-[#D2B48C] md:w-10 rounded"> */}
                     <figure className="glass-products md:w-14 md:h-14">
                       <Link to={`/brand/${car.brandName}/${car._id}`}>
                         <img className="p-4" src={view} alt="" />
                       </Link>
                     </figure>
-                    {/* <figure className="bg-[#3C393B] md:w-10 rounded"> */}
                     <figure className="glass-products md:w-14 md:h-14">
                       {/* <Link to={`/updateCoffee/${car._id}`}> */}
                       <img className="p-4" src={update} alt="" />
                       {/* </Link> */}
                     </figure>
-                    {/* <figure className="bg-[#EA4744] md:w-10 rounded"> */}
                     <figure className="glass-products md:w-14 md:h-14">
                       <img
                         // onClick={() => handleDelete(car._id)}

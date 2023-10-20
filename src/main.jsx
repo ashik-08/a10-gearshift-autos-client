@@ -9,6 +9,7 @@ import AddCarPage from "./pages/AddCarPage/AddCarPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import OneBrandAllCarShowPage from "./pages/OneBrandAllCarShowPage/OneBrandAllCarShowPage";
 import CarDetailsInfoPage from "./pages/CarDetailsInfoPage/CarDetailsInfoPage";
+import MyCartPage from "./pages/MyCartPage/MyCartPage";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
         path: "/brand/:brandName/:id",
         element: <CarDetailsInfoPage></CarDetailsInfoPage>,
         loader: ({ params }) => fetch(`http://localhost:5001/brand/${params.brandName}/${params.id}`),
+      },
+      {
+        path: '/cart',
+        element: <MyCartPage></MyCartPage>,
+        loader: () => fetch("http://localhost:5001/cart"),
       }
     ],
   },

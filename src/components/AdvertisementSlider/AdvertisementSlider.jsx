@@ -96,7 +96,7 @@ const AdvertisementSlider = () => {
               For family outings or solo adventures, <br />
               our SUVs offer the perfect blend of <br />
               space, safety and style. Find your <br />
-              path to unforgettable moments
+              path to unforgettable moments.
             </p>
             <button className="text-black text-xs md:text-base lg:text-lg font-medium md:font-semibold px-2 py-1 md:px-5 md:py-2.5 lg:px-5 lg:py-3 bg-menu rounded-lg">
               Explore
