@@ -7,6 +7,8 @@ import { FcGoogle } from "react-icons/fc";
 import Swal from "sweetalert2";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
 
 const Login = () => {
   const [showPass, setShowPass] = useState(false);
@@ -78,90 +80,94 @@ const Login = () => {
   };
 
   return (
-    <section className="container mx-auto">
-      <div className="glass-newsletter flex justify-center mt-20 md:mt-32 py-20">
-        <Card color="transparent" shadow={false}>
-          <Typography
-            variant="h4"
-            className="text-center text-blue-gray-200 font-annie text-3xl mb-5"
-          >
-            Sign In
-          </Typography>
-          <Typography className="font-normal text-center text-blue-gray-200 text-lg font-kalam">
-            Enter your details to login.
-          </Typography>
-          <form onSubmit={handleLogin} className="mt-10 mb-2 w-72 md:w-96">
-            <div className="mb-4 flex flex-col gap-6">
-              <span className="space-y-3">
-                <p className="text-menu text-xl font-medium">Email</p>
-                <Input
-                  className="text-gray-100"
-                  type="email"
-                  name="email"
-                  size="lg"
-                  label="Enter Your Email"
-                  required
-                />
-              </span>
-              <span className="space-y-3">
-                <p className="text-menu text-xl font-medium">Password</p>
-                <Input
-                  className="text-gray-100"
-                  type={showPass ? "text" : "password"}
-                  name="password"
-                  size="lg"
-                  label="Enter Your Password"
-                  required
-                />
-              </span>
-              <span
-                className="absolute top-72 right-3"
-                onClick={() => setShowPass(!showPass)}
-              >
-                {showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
-              </span>
-            </div>
-
+    <section>
+      <NavBar></NavBar>
+      <div className="container mx-auto">
+        <div className="glass-newsletter flex justify-center mt-20 md:mt-32 py-20">
+          <Card color="transparent" shadow={false}>
             <Typography
-              variant="small"
-              color="gray"
-              className="flex items-center text-blue-gray-200 font-normal"
+              variant="h4"
+              className="text-center text-blue-gray-200 font-annie text-3xl mb-5"
             >
-              <a
-                href="#"
-                className="font-medium transition-colors hover:text-gray-100"
-              >
-                Forgot password?
-              </a>
+              Sign In
             </Typography>
+            <Typography className="font-normal text-center text-blue-gray-200 text-lg font-kalam">
+              Enter your details to login.
+            </Typography>
+            <form onSubmit={handleLogin} className="mt-10 mb-2 w-72 md:w-96">
+              <div className="mb-4 flex flex-col gap-6">
+                <span className="space-y-3">
+                  <p className="text-menu text-xl font-medium">Email</p>
+                  <Input
+                    className="text-gray-100"
+                    type="email"
+                    name="email"
+                    size="lg"
+                    label="Enter Your Email"
+                    required
+                  />
+                </span>
+                <span className="space-y-3">
+                  <p className="text-menu text-xl font-medium">Password</p>
+                  <Input
+                    className="text-gray-100"
+                    type={showPass ? "text" : "password"}
+                    name="password"
+                    size="lg"
+                    label="Enter Your Password"
+                    required
+                  />
+                </span>
+                <span
+                  className="absolute top-72 right-3"
+                  onClick={() => setShowPass(!showPass)}
+                >
+                  {showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                </span>
+              </div>
 
-            <Button className="mt-6" type="submit" fullWidth>
-              <input type="submit" value="Login" />
-            </Button>
-            <Typography className="mt-4 text-center text-blue-gray-200 font-normal">
-              Not registered yet?{" "}
-              <Link
-                to="/register"
-                className="font-medium text-blue-gray-100 hover:text-gray-100"
+              <Typography
+                variant="small"
+                color="gray"
+                className="flex items-center text-blue-gray-200 font-normal"
               >
-                Sign Up
-              </Link>
+                <a
+                  href="#"
+                  className="font-medium transition-colors hover:text-gray-100"
+                >
+                  Forgot password?
+                </a>
+              </Typography>
+
+              <Button className="mt-6" type="submit" fullWidth>
+                <input type="submit" value="Login" />
+              </Button>
+              <Typography className="mt-4 text-center text-blue-gray-200 font-normal">
+                Not registered yet?{" "}
+                <Link
+                  to="/register"
+                  className="font-medium text-blue-gray-100 hover:text-gray-100"
+                >
+                  Sign Up
+                </Link>
+              </Typography>
+            </form>
+            <Typography
+              variant="h6"
+              className="mt-4 text-center text-blue-gray-200 font-bold"
+            >
+              Or
             </Typography>
-          </form>
-          <Typography
-            variant="h6"
-            className="mt-4 text-center text-blue-gray-200 font-bold"
-          >
-            Or
-          </Typography>
-          <Button
-            onClick={handleGoogleSignIn}
-            className="flex justify-center items-center gap-2 normal-case mt-5"
-          >
-            <FcGoogle></FcGoogle>Login with Google
-          </Button>
-        </Card>
+            <Button
+              onClick={handleGoogleSignIn}
+              className="flex justify-center items-center gap-2 normal-case mt-5"
+            >
+              <FcGoogle></FcGoogle>Login with Google
+            </Button>
+          </Card>
+        </div>
       </div>
+      <Footer></Footer>
       <ToastContainer />
     </section>
   );

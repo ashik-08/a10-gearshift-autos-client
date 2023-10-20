@@ -6,17 +6,19 @@ import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const ShowCars = () => {
   const loadedAllCars = useLoaderData();
 
   const [allCars, setAllCars] = useState(loadedAllCars);
 
+  const { user } = useContext(AuthContext);
+
   let count = 0;
 
   const handleDeleteCar = (_id, brandName) => {
-
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -29,9 +31,12 @@ const ShowCars = () => {
       if (result.isConfirmed) {
         // delete car details from the carBrand collection
         try {
-          const response = await fetch(`http://localhost:5001/brand/${brandName}/${_id}`, {
-            method: "DELETE",
-          });
+          const response = await fetch(
+            `http://localhost:5001/brand/${brandName}/${_id}`,
+            {
+              method: "DELETE",
+            }
+          );
           const result = await response.json();
           console.log(result);
           if (result.deletedCount > 0) {
@@ -147,12 +152,24 @@ const ShowCars = () => {
                       </Link>
                     </figure>
                     <figure className="glass-products md:w-14 md:h-14">
-                      <img
+                      {user ? (
+                        <img
+                          onClick={() =>
+                            handleDeleteCar(car._id, car.brandName)
+                          }
+                          className="p-4"
+                          src={remove}
+                          alt=""
+                        />
+                      ) : (
+                        <img className="p-4" src={remove} alt="" />
+                      )}
+                      {/* <img
                         onClick={() => handleDeleteCar(car._id, car.brandName)}
                         className="p-4"
                         src={remove}
                         alt=""
-                      />
+                      /> */}
                     </figure>
                   </div>
                 </div>
@@ -161,7 +178,7 @@ const ShowCars = () => {
           </div>
         ))
       )}
-      <ToastContainer/>
+      <ToastContainer />
     </section>
   );
 };

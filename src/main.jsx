@@ -14,6 +14,7 @@ import UpdateCarPage from "./pages/UpdateCarPage/UpdateCarPage";
 import AuthProvider from "./Providers/AuthProvider";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
+import PrivateRoute from "./Routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addCar",
-        element: <AddCarPage></AddCarPage>,
+        element: <PrivateRoute><AddCarPage></AddCarPage></PrivateRoute>,
       },
       {
         path: "/brand/:brandName",
@@ -38,19 +39,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/brand/:brandName/:id",
-        element: <CarDetailsInfoPage></CarDetailsInfoPage>,
+        element: <PrivateRoute><CarDetailsInfoPage></CarDetailsInfoPage></PrivateRoute>,
         loader: ({ params }) =>
           fetch(`http://localhost:5001/brand/${params.brandName}/${params.id}`),
       },
       {
         path: "/updateCar/:brandName/:id",
-        element: <UpdateCarPage></UpdateCarPage>,
+        element: <PrivateRoute><UpdateCarPage></UpdateCarPage></PrivateRoute>,
         loader: ({ params }) =>
           fetch(`http://localhost:5001/brand/${params.brandName}/${params.id}`),
       },
       {
         path: "/cart",
-        element: <MyCartPage></MyCartPage>,
+        element: <PrivateRoute><MyCartPage></MyCartPage></PrivateRoute>,
         loader: () => fetch("http://localhost:5001/cart"),
       },
       {
