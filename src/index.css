@@ -31,3 +31,17 @@
   backdrop-filter: blur(2.5px);
   -webkit-backdrop-filter: blur(2.5px);
 }
+
+:root {
+  --my-color: #fff;
+  --sec-color: #000;
+}
+[data-theme="dark"] {
+  --my-color: #333;
+  --sec-color: #fff;
+}
+
+body {
+  background-color: var(--my-color);
+  color: var(--sec-color);
+}

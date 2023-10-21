@@ -25,7 +25,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage></HomePage>,
-        loader: () => fetch("http://localhost:5001/brand"),
+        loader: () =>
+          fetch("https://a10-gearshift-autos-server.vercel.app/brand"),
       },
       {
         path: "/addCar",
@@ -39,7 +40,9 @@ const router = createBrowserRouter([
         path: "/brand/:brandName",
         element: <OneBrandAllCarShowPage></OneBrandAllCarShowPage>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5001/brand/${params.brandName}`),
+          fetch(
+            `https://a10-gearshift-autos-server.vercel.app/brand/${params.brandName}`
+          ),
       },
       {
         path: "/brand/:brandName/:id",
@@ -49,7 +52,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5001/brand/${params.brandName}/${params.id}`),
+          fetch(
+            `https://a10-gearshift-autos-server.vercel.app/brand/${params.brandName}/${params.id}`
+          ),
       },
       {
         path: "/updateCar/:brandName/:id",
@@ -59,7 +64,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5001/brand/${params.brandName}/${params.id}`),
+          fetch(
+            `https://a10-gearshift-autos-server.vercel.app/brand/${params.brandName}/${params.id}`
+          ),
       },
       {
         path: "/cart",
@@ -68,7 +75,8 @@ const router = createBrowserRouter([
             <MyCartPage></MyCartPage>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5001/cart"),
+        loader: () =>
+          fetch("https://a10-gearshift-autos-server.vercel.app/cart"),
       },
       {
         path: "/register",

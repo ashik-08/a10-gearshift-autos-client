@@ -32,7 +32,7 @@ const UpdateCar = ({ carDetails }) => {
     // send updated details to the server
     try {
       const response = await fetch(
-        `http://localhost:5001/brand/${brandName}/${_id}`,
+        `https://a10-gearshift-autos-server.vercel.app/brand/${brandName}/${_id}`,
         {
           method: "PUT",
           headers: {
@@ -62,16 +62,19 @@ const UpdateCar = ({ carDetails }) => {
     } catch (error) {
       console.error(error);
       if (error.message.includes("No such brand")) {
-        toast.error(`Invalid Brand Name ${brandName}. (Hint: Capitalize Name)`, {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-        });
+        toast.error(
+          `Invalid Brand Name ${brandName}. (Hint: Capitalize Name)`,
+          {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          }
+        );
       } else {
         toast.error("Couldn't Update!!! Try Again!!!", {
           position: "top-right",

@@ -22,9 +22,12 @@ const CartItems = ({ item, cartItems, setCartItems }) => {
       if (result.isConfirmed) {
         // delete item from the cart collection database
         try {
-          const response = await fetch(`http://localhost:5001/cart/${_id}`, {
-            method: "DELETE",
-          });
+          const response = await fetch(
+            `https://a10-gearshift-autos-server.vercel.app/cart/${_id}`,
+            {
+              method: "DELETE",
+            }
+          );
           const result = await response.json();
           console.log(result);
           if (result.deletedCount > 0) {

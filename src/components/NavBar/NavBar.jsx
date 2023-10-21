@@ -1,10 +1,16 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { useEffect } from "react";
+import { themeChange } from "theme-change";
 import Swal from "sweetalert2";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
+
+  useEffect(() => {
+    themeChange(false);
+  }, []);
 
   const handleLogOut = () => {
     logOut()
@@ -157,6 +163,12 @@ const NavBar = () => {
                   <Link to="/login">Login</Link>
                 </li>
               )}
+              <li>
+                <select data-choose-theme>
+                  <option value="">Light Theme</option>
+                  <option value="dark">Dark Theme</option>
+                </select>
+              </li>
             </ul>
           </div>
         </div>

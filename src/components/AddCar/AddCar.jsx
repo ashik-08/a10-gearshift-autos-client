@@ -27,13 +27,16 @@ const AddCar = () => {
 
     // send data to the server
     try {
-      const response = await fetch(`http://localhost:5001/brand/${brandName}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newCar),
-      });
+      const response = await fetch(
+        `https://a10-gearshift-autos-server.vercel.app/brand/${brandName}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newCar),
+        }
+      );
       const result = await response.json();
       console.log(result);
       if (result.insertedId) {
@@ -48,16 +51,19 @@ const AddCar = () => {
     } catch (error) {
       console.error(error.message);
       if (error.message.includes(`No such brand ${brandName}`)) {
-        toast.error(`Invalid Brand Name ${brandName}. Should be like BMW or Ford! (Hint: Capitalize Name)`, {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-        });
+        toast.error(
+          `Invalid Brand Name ${brandName}. Should be like BMW or Ford! (Hint: Capitalize Name)`,
+          {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          }
+        );
       } else if (error.message.includes("Already exists in DB")) {
         toast.error(`${name} Already Exists in Database`, {
           position: "top-right",

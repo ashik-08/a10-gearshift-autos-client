@@ -32,7 +32,7 @@ const ShowCars = () => {
         // delete car details from the carBrand collection
         try {
           const response = await fetch(
-            `http://localhost:5001/brand/${brandName}/${_id}`,
+            `https://a10-gearshift-autos-server.vercel.app/brand/${brandName}/${_id}`,
             {
               method: "DELETE",
             }

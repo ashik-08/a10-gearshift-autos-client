@@ -9,22 +9,23 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 const CarDetailsInfoPage = () => {
   const carDetails = useLoaderData();
-  // console.log(carDetails);
+
   const { user } = useContext(AuthContext);
   const userEmail = user?.email;
 
   const handleAddToCart = async (carDetails, userEmail) => {
-
     // send data to the server using userEmail as unique identifier
     try {
-      // const response = await fetch('http://localhost:5001/cart', {
-      const response = await fetch(`http://localhost:5001/cart/${userEmail}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(carDetails),
-      });
+      const response = await fetch(
+        `https://a10-gearshift-autos-server.vercel.app/cart/${userEmail}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(carDetails),
+        }
+      );
       const result = await response.json();
       console.log(result);
       if (result.insertedId) {
@@ -70,7 +71,11 @@ const CarDetailsInfoPage = () => {
       <div className="container mx-auto mt-32">
         <div className="glass-products p-5 md:p-10 lg:p-20 xl:p-28">
           <figure className="mb-20 lg:mb-28">
-            <img className="text-blue-gray-200 rounded-lg" src={carDetails?.image} alt={`${carDetails?.name}-image`} />
+            <img
+              className="text-blue-gray-200 rounded-lg"
+              src={carDetails?.image}
+              alt={`${carDetails?.name}-image`}
+            />
           </figure>
           <div className="space-y-5 lg:space-y-8">
             <h1 className="text-menu text-xl lg:text-3xl">Name:</h1>
