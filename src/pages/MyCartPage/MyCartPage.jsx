@@ -3,11 +3,19 @@ import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 import CartItems from "../../components/CartItems/CartItems";
 import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const MyCartPage = () => {
+  const { user } = useContext(AuthContext);
+
   const loadedCartItems = useLoaderData();
 
-  const [cartItems, setCartItems] = useState(loadedCartItems);
+  const filterByUserEmail = loadedCartItems.filter(
+    (getTotal) => getTotal.userEmail === user?.email
+  );
+
+  const [cartItems, setCartItems] = useState(filterByUserEmail);
 
   return (
     <section>

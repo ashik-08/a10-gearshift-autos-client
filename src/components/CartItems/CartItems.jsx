@@ -7,10 +7,9 @@ import "react-toastify/dist/ReactToastify.css";
 import PropTypes from "prop-types";
 
 const CartItems = ({ item, cartItems, setCartItems }) => {
-  const { _id, image, name, brandName, type, price } = item;
+  const { _id, prevId, image, name, brandName, type, price } = item;
 
   const handleDeleteFromCart = (_id) => {
-
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -37,7 +36,7 @@ const CartItems = ({ item, cartItems, setCartItems }) => {
           }
         } catch (error) {
           console.error(error);
-          toast.error("Couldn't Delete!! Try Again!!", {
+          toast.error("Couldn't Delete. Try Again.", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -55,7 +54,7 @@ const CartItems = ({ item, cartItems, setCartItems }) => {
     <section className="flex">
       <figure className="w-1/2">
         <img
-          className="w-screen h-[160px] lg:h-[200px] xl:h-[240px] rounded-l-lg"
+          className="w-screen h-[160px] lg:h-[200px] xl:h-[240px] rounded-l-lg text-blue-gray-200"
           src={image}
           alt={`${name}-image`}
         />
@@ -73,7 +72,7 @@ const CartItems = ({ item, cartItems, setCartItems }) => {
         {/* icons */}
         <div className="flex gap-5 pt-2 lg:pt-4">
           <figure className="glass-products md:w-10 rounded">
-            <Link to={`/brand/${brandName}/${_id}`}>
+            <Link to={`/brand/${brandName}/${prevId}`}>
               <img className="p-1.5 md:p-2  " src={view} alt="" />
             </Link>
           </figure>

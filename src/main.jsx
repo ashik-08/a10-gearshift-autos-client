@@ -29,7 +29,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addCar",
-        element: <PrivateRoute><AddCarPage></AddCarPage></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <AddCarPage></AddCarPage>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/brand/:brandName",
@@ -39,27 +43,39 @@ const router = createBrowserRouter([
       },
       {
         path: "/brand/:brandName/:id",
-        element: <PrivateRoute><CarDetailsInfoPage></CarDetailsInfoPage></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <CarDetailsInfoPage></CarDetailsInfoPage>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5001/brand/${params.brandName}/${params.id}`),
       },
       {
         path: "/updateCar/:brandName/:id",
-        element: <PrivateRoute><UpdateCarPage></UpdateCarPage></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <UpdateCarPage></UpdateCarPage>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5001/brand/${params.brandName}/${params.id}`),
       },
       {
         path: "/cart",
-        element: <PrivateRoute><MyCartPage></MyCartPage></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <MyCartPage></MyCartPage>
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:5001/cart"),
       },
       {
-        path: '/register',
+        path: "/register",
         element: <Register></Register>,
       },
       {
-        path: 'login',
+        path: "login",
         element: <Login></Login>,
       },
     ],

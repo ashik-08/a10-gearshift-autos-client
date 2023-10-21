@@ -4,17 +4,21 @@ import NavBar from "../../components/NavBar/NavBar";
 import Swal from "sweetalert2";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const CarDetailsInfoPage = () => {
   const carDetails = useLoaderData();
   // console.log(carDetails);
+  const { user } = useContext(AuthContext);
+  const userEmail = user?.email;
 
-  const handleAddToCart = async (carDetails) => {
-    console.log(carDetails);
+  const handleAddToCart = async (carDetails, userEmail) => {
 
-    // send data to the server
+    // send data to the server using userEmail as unique identifier
     try {
-      const response = await fetch("http://localhost:5001/cart", {
+      // const response = await fetch('http://localhost:5001/cart', {
+      const response = await fetch(`http://localhost:5001/cart/${userEmail}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,6 +48,17 @@ const CarDetailsInfoPage = () => {
           progress: undefined,
           theme: "colored",
         });
+      } else if (error.message.includes("Failed to fetch")) {
+        toast.error("Failed to fetch or Connect to the Server", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       }
     }
   };
@@ -55,7 +70,7 @@ const CarDetailsInfoPage = () => {
       <div className="container mx-auto mt-32">
         <div className="glass-products p-5 md:p-10 lg:p-20 xl:p-28">
           <figure className="mb-20 lg:mb-28">
-            <img className="rounded-lg" src={carDetails.image} alt="" />
+            <img className="text-blue-gray-200 rounded-lg" src={carDetails?.image} alt={`${carDetails?.name}-image`} />
           </figure>
           <div className="space-y-5 lg:space-y-8">
             <h1 className="text-menu text-xl lg:text-3xl">Name:</h1>
@@ -105,7 +120,7 @@ const CarDetailsInfoPage = () => {
             <button
               className="text-menu text-xl btn glass"
               onClick={() => {
-                handleAddToCart(carDetails);
+                handleAddToCart(carDetails, userEmail);
               }}
             >
               Add to Cart
