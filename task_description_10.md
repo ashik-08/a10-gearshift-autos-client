@@ -1,8 +1,8 @@
-## :computer: Task Description:
+## 💻 Task Description:
 
 Our company is focused on building websites based on renowned brands. Currently, we are in search of a MERN Stack developer to develop our upcoming brand-new website.
 
-:triangular_flag_on_post: Update in requirements
+🚩 Update in requirements
   - Check requirements 5,6,11
   - You can load brand names in home page from database / you can create fake-data & load from json.
 
@@ -38,7 +38,7 @@ Here, we have provided you a list of `7 different types of categories to build y
 
   - `Example`: L'Oréal, Estée Lauder, Chanel, Dior, Urban Decay, Procter & Gamble, Revlon, Avon, Coty, etc.
 
-### :writing_hand: Main Requirements
+### ✍️ Main Requirements
 
 1. Make sure your design and website idea is unique. First, finalize your idea (what type of website you want to build). Then google the site design or visit `themeforest` to get your website idea. [You can visit this blog to collect free resources for your website](https://bootcamp.uxdesign.cc/free-images-and-resources-collection-for-website-c77f2fc46ce5). However, your website :x: `can not be related to your previous assignments or any demo project displayed in the course or in our conceptual sessions` :x:.
 
@@ -96,7 +96,7 @@ Here, we have provided you a list of `7 different types of categories to build y
 
 12. You Must implement Email and password based Authentication. This means, you will have to implement the Registration and the login page. Users should be able to toggle between Login and Registration view .
 
-> :warning: `Note:` Do not enforce `forget or reset password feature` and the `email verification method`, as it will inconvenience the examiner. If you want, you can add email verification/forget the password after receiving the assignment result.
+> ⚠️ `Note:` Do not enforce `forget or reset password feature` and the `email verification method`, as it will inconvenience the examiner. If you want, you can add email verification/forget the password after receiving the assignment result.
 
 On the Registration page, display errors when:
 
@@ -118,7 +118,7 @@ On the Login page, display errors when:
 
 15. Add a 404 page (not found page)
 
-### :gift: Bonus Requirements:
+### 🎁 Bonus Requirements:
 
 1. **Commits & readme:**
 
@@ -133,7 +133,7 @@ On the Login page, display errors when:
 
 4. Implementing a dark/light theme toggle for the home page. It's optional to implement the theme toggle for the entire website.
 
-### :scroll: Additional information:
+### 📃 Additional information:
 
 1. You cannot load the data from a .json file. The data must be stored in the database and you must all the data from the database.
 2. You can use a local or host image anywhere or use pictures from the internet. And it's ok if you have the image url, but the image link doesn't work.
@@ -142,13 +142,13 @@ On the Login page, display errors when:
 5. Host your server-side application on Vercel. If needed, you can host somewhere else as well.
 6. Make Sure you deploy server-side and client-side on the first day. If you have any issues with hosting or GitHub push, please join the "Github and deploy" related support session.
 
-### :pushpin: What to submit
+### 📌 What to submit
 
 1. Github client-side repository: https://github.com/programming-hero-web-course-4/b8a10-brandshop-client-side-ashik-08
 2. Github server-side repository: https://github.com/programming-hero-web-course-4/b8a10-brandshop-server-side-ashik-08
 3. Live website: https://a10-gearshift-autos.web.app/
 
 
-### :trophy: No Pain, No Gain:
+### 🏆 No Pain, No Gain:
 
 - The most beautiful moments in life comes after going through hardships and challenges.

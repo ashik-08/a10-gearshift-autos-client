@@ -8,12 +8,26 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ## Project Name
-- GearShift Autos
+- **GearShift Autos**
 
 ## Live Website
-- https://a10-gearshift-autos.web.app/
+- [GearShift Autos](https://a10-gearshift-autos.web.app/)
 
-## 5 key points of GearShift Autos website:
+## Description
+GearShift Autos is an automotive brand website built using React, React Router, Tailwind CSS, DaisyUI, Material Tailwind, Firebase, MongoDB, Node.js, and Express.js. The website showcases various car brands, providing detailed information on each car, including images, prices, types, ratings, and descriptions. Users can explore a wide range of vehicles from different manufacturers. The website incorporates user-friendly authentication through Firebase, allowing users to create accounts and access personalized features. Private routes ensure that only registered users can access certain functionalities, enhancing security and customization. The shopping experience is personalized, with registered users able to create and manage their own shopping carts, adding and removing items as needed. The backend is powered by MongoDB, providing efficient data handling for brands, cars, and user carts. The website is deployed on Vercel for the server-side and Firebase for the client-side, ensuring optimal performance and scalability.
+
+## Technology
+- React
+- React Router
+- Tailwind CSS
+- DaisyUI
+- Material Tailwind
+- Firebase
+- MongoDB
+- Node.js
+- Express.js
+
+## 5 Key Points of GearShift Autos website:
 
 1. **Multi-Brand Automotive Showcase:** The website serves as a comprehensive platform showcasing various car brands, with detailed information on each car, including images, prices, types, rating and descriptions. Users can explore a wide range of vehicles from different manufacturers.
 
@@ -27,15 +41,53 @@ Currently, two official plugins are available:
 
 ## Project Features
 
-- Tailwind CSS, Material Tailwind Component, DaisyUI
+#### Navbar:
+- Provides easy navigation with a logo, home, add product, my cart, login, and additional sections.
+
+#### Banner:
+- Showcases brand names with images on the home page.
+
+#### Footer:
+- Displays additional sections on the home page.
+
+#### Dark and Light Theme Toggle:
+- Enhances user experience with theme options in the navbar.
+
+#### Add Product Page:
+- Allows users to add new products via a private/protected route, including image, name, brand name, type, price, short description, and rating.
+
+#### Brand Pages:
+- Redirects users to pages with products based on selected brands, featuring a slider with advertisements and detailed information on each product.
+
+#### Product Detail Route:
+- Private route displaying detailed information about a specific product, with an "Add to Cart" button.
+
+#### Shopping Cart:
+- Private route where users can view and manage their added products, with the option to delete items.
+
+#### Update Product Form:
+- Private/protected route allowing users to update product details, including image, name, brand name, type, price, and rating.
+
+#### Authentication:
+- Implements email and password-based authentication with registration, login, and additional login options.
+
+#### User Display:
+- Displays user name, profile picture, and logout button upon authentication.
+
+#### 404 Page:
+- Custom not found page for user-friendly navigation.
+
+#### Others
+
+- Tailwind CSS, Material Tailwind Component, DaisyUI Component
 
 - React Router & Component
 
 - Error Page Element
 
-- useState, useEffect, useContext Hooks
+- `useState`, `useEffect`, `useContext` Hooks
 
-- useParams, useLoaderData
+- `useParams`, `useLoaderData`
 
 - loader function
 
