@@ -25,7 +25,7 @@ const FollowUs = () => {
         <figure className="bg-blue-gray-100 p-2 rounded-lg">
           <img
             className="drop-shadow-lg rounded"
-            src="https://w.forfun.com/fetch/42/42b9683ea28d01dd1e60b830f21db3f0.jpeg"
+            src="https://i.pinimg.com/originals/9d/44/3d/9d443d8672580a8da44c29decb9a15e6.jpg"
             alt="BMW-image"
           />
         </figure>
@@ -39,8 +39,8 @@ const FollowUs = () => {
         <figure className="bg-blue-gray-100 p-2 rounded-lg">
           <img
             className="drop-shadow-lg rounded"
-            src="https://images4.alphacoders.com/131/1313071.jpeg"
-            alt="Ford-classic-image"
+            src="https://wallpapercat.com/w/full/7/c/8/175880-3840x2160-desktop-4k-ford-background-photo.jpg"
+            alt="Ford-image"
           />
         </figure>
         <figure className="bg-blue-gray-100 p-2 rounded-lg">
